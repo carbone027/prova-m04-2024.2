@@ -88,8 +88,9 @@ void loop() {
     Serial.print("its dark turn on led");
     Serial.println(ldrstatus);
 
-    digitalWrite(yellow_led, HIGH);
     if(timeNow - lastMoment >= 1000) {
+      digitalWrite(yellow_led, HIGH);
+    } else if (timeNow - lastMoment >= 2000) {
       digitalWrite(yellow_led, LOW);
       lastMoment = timeNow;
     };
